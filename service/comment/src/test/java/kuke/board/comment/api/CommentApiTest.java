@@ -16,15 +16,11 @@ public class CommentApiTest {
 
     @Test
     void create() {
-        CommentResponse response1 = createComment(new CommentCreateRequest(1L, "my comment1", null, 1L));
-        CommentResponse response2 = createComment(new CommentCreateRequest(1L, "my comment2", response1.getCommentId(), 1L));
-        CommentResponse response3 = createComment(new CommentCreateRequest(1L, "my comment3", response1.getCommentId(), 1L));
+        CommentResponse response1 = createComment(new CommentCreateRequest(1L, "my comment1", null, 1000L));
+        CommentResponse response2 = createComment(new CommentCreateRequest(1L, "my comment2", response1.getCommentId(), 1000L));
 
         System.out.println("commentId=%s".formatted(response1.getCommentId()));
         System.out.println("commentId=%s".formatted(response2.getCommentId()));
-        System.out.println("commentId=%s".formatted(response3.getCommentId()));
-
-
     }
 
     @Test
